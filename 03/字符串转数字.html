@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var obt=document.getElementById("bt1");
+	obt.onclick=function(){
+		var n1=parseInt(te1.value);
+		var n2=parseInt(te2.value);
+		if(isNaN(n1)==true || isNaN(n2)==true){
+			alert("请输入数字");
+		}else{
+		alert(parseInt(te1.value)+parseInt(te2.value));
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<input id="te1" type="text" />
+<input id="te2" type="text" />
+<input id="bt1" type="button" value="求和" />
+</body>
+</html>
