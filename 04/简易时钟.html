@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<script>
+function toDou(n){
+	if(n<10){
+		return '0'+n;
+	}else{
+		return ''+n;
+	}
+}
+window.onload=function(){
+	var aimg=document.getElementsByTagName("img");
+	function tike(){
+			var oDate=new Date();
+			var str=toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(				 	 oDate.getSeconds());
+	
+			for(var i=0;i<aimg.length;i++){
+				aimg[i].src='../../img/'+str[i]+'.png';
+			}
+		}
+		setInterval(tike,1000);
+		tike();
+	
+}
+
+</script>
+</head>
+
+<body>
+<div id="div1">
+<img src="../../img/0.png">
+<img src="../../img/0.png">
+<b>:</b>
+<img src="../../img/0.png">
+<img src="../../img/0.png">
+<b>:</b>
+<img src="../../img/0.png">
+<img src="../../img/2.png">
+</div>
+</body>
+</html>
