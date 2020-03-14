@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var oTe=document.getElementById("te");
+	var oBt=document.getElementById("bt");
+	
+	oBt.onclick=function(){
+		//oTe['value']='456';
+		//oTe.value='123';
+		
+		oTe.setAttribute('value','789');
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="te">
+<input type="button" id="bt" value="设置">
+</body>
+</html>

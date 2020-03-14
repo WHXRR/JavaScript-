@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+* {margin:0px; padding:0px;}
+#div1 {width:712px; height:108px; margin:100px auto; position:relative; overflow:hidden}
+#div1 ul { position:absolute; left:0px; top:0px;}
+#div1 ul li {float:left; width:178px; height:108px; list-style:none}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById("div1");
+	var oUl=oDiv.getElementsByTagName("ul")[0];
+	var aLi=oUl.getElementsByTagName('li');
+	var speed=2;
+	oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+	oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+	
+	function move(){
+		if(oUl.offsetLeft<-oUl.offsetWidth/2){
+				oUl.style.left='0';
+		}
+		if(oUl.offsetLeft>0){
+			oUl.style.left=-oUl.offsetWidth/2+'px';	
+		}
+		oUl.style.left=oUl.offsetLeft+speed+'px';
+	};
+	
+	var timer=setInterval(move,30);
+
+	oDiv.onmouseover=function(){
+	clearInterval(timer);
+	};
+	oDiv.onmouseout=function(){
+		timer=setInterval(move,30);
+	}
+	document.getElementById("bt1").onclick=function(){
+		speed=-2;
+	}
+	document.getElementById("bt2").onclick=function(){
+		speed=2;
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<input id="bt1" type="button" value="向左" />
+<input id="bt2" type="button" value="向右" />
+<div id="div1">
+<ul>
+<li><img src="../../img/1.jpg" /></li>
+<li><img src="../../img/2.jpg" /></li>
+<li><img src="../../img/3.jpg" /></li>
+<li><img src="../../img/4.jpg" /></li>
+
+</ul>
+</div>
+</body>
+</html>
