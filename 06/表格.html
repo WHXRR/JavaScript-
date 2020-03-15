@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var oTab=document.getElementById("tab1");
+	var oBack='';
+	for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+		oTab.tBodies[0].rows[i].onmouseover=function(){
+			oBack=this.style.background;
+			this.style.background='blue';
+		}
+		oTab.tBodies[0].rows[i].onmouseout=function(){
+			this.style.background=oBack;
+		}
+		
+		if(i%2){
+			oTab.tBodies[0].rows[i].style.background='red';
+		}else{
+			oTab.tBodies[0].rows[i].style.background='';
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<table id="tab1" border='1' width="300px">
+<thead>
+<td>ID</td>
+<td>姓名</td>
+<td>年龄</td>
+<td>操作</td>
+<tbody>
+<tr>
+<td>01</td>
+<td>王啊</td>
+<td>21</td>
+<td></td>
+</tr>
+<tr>
+<td>02</td>
+<td>李绿</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr>
+<td>03</td>
+<td>王给古</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>04</td>
+<td>胡南</td>
+<td>25</td>
+<td></td>
+</tr>
+</tbody>
+</thead>
+</table>
+</body>
+</html>
