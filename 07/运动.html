@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1 {width:200px; height:200px; background:red; left:0px; position:absolute;}
+</style>
+<script>
+	var time=null;
+	var speed=7;
+function startMove(){
+	oBt1=document.getElementById("bt1");
+	oDiv=document.getElementById("div1");
+	clearInterval(time);
+	time=setInterval(function(){
+		if(oDiv.offsetLeft>=400){
+			clearInterval(time);
+		}else{
+		oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+	},30);
+	
+}
+</script>
+</head>
+
+<body>
+<input type="button" id="bt1" onclick="startMove()" value="移动"/>
+<div id="div1">
+</div>
+</body>
+</html>
