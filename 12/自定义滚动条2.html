@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#parent {width:600px; height:20px; background:#ccc; position:relative; margin:10px auto;}
+#div1 {width:20px; height:20px; position:absolute; left:0; top:0; background:blue;}
+#div2 {width:400px; height:300px; border:1px solid black; overflow:hidden; position:relative;}
+#div3 { position:absolute; left:0; top:0;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById("div1");
+	var oParent=document.getElementById("parent");
+	var oDiv2=document.getElementById("div2");
+	var oDiv3=document.getElementById("div3");
+	var disX=0;
+	
+	oDiv.onmousedown=function(ev){
+		var oEvent=ev||event;
+		disX=oEvent.clientX-oDiv.offsetLeft;
+		
+		document.onmousemove=function(ev){
+			var oEvent=ev||event;
+			var l=oEvent.clientX-disX;
+			if(l<0){
+				l=0;
+			}else if(l>oParent.offsetWidth-oDiv.offsetWidth){
+				l=oParent.offsetWidth-oDiv.offsetWidth;
+			}
+			oDiv.style.left=l+'px';
+			
+			var scale=l/(oParent.offsetWidth-oDiv.offsetWidth);
+			oDiv3.style.top=-scale*(oDiv3.offsetHeight-oDiv2.offsetHeight)+'px';
+		}
+		
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="parent">
+	<div id="div1"></div>
+</div>
+<div id="div2">
+<div id="div3">
+领先的 Web 技术教程 - 全部免费
+在 W3School，你可以找到你所需要的所有的网站建设教程。
+
+从基础的 HTML 到 CSS，乃至进阶的 XML、SQL、JS、PHP 和 ASP.NET。
+
+从左侧的菜单选择你需要的教程！
+
+完整的网站技术参考手册
+我们的参考手册涵盖了网站技术的方方面面。
+
+其中包括W3C标准技术：HTML、CSS、XML 。以及其他技术，诸如 JavaScript、PHP、SQL 等。
+
+在线实例测试工具
+在 W3School，我们提供上千个实例。通过使用我们的在线编辑器，你可以编辑这些例子，并对代码进行实验。
+
+快捷易懂的学习方式
+一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容。
+
+在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。
+
+从何入手？
+什么是一个 Web 建设者需要学习的知识呢？
+
+W3School 将为您回答这个问题，在您成为专业 Web 开发者的路上助一臂之力。
+
+如果您是初学者，请您阅读《网站构建初级教程》。
+
+如果您是开发者，请您阅读《网站构建高级教程》。
+
+W3School 新闻
+W3School 首个编程教程：Python 教程上线！
+
+W3School 更新信息
+参考手册：Python 文件方法     参考手册：Python 关键字
+
+W3School 友情链接
+Firefox 中文社区     w3ctech     WeTest腾讯质量开放平台    
+
+新浪微博
+W3School 官方微博
+
+微信公众号
+W3School 官方服务号
+
+参考手册
+HTML/HTML5 标签
+HTML 颜色
+CSS 1,2,3
+JavaScript
+HTML DOM
+jQuery
+jQuery Mobile
+VBScript
+ASP
+ADO
+ASP.NET
+PHP
+Python
+XML DOM
+XSLT 1.0
+XPath 2.0
+XSL-FO
+WML 1.1
+W3C 术语表
+字符集
+HTML 字符集
+HTML ASCII
+HTML ISO-8859-1
+HTML 符号
+实例/案例
+HTML 实例
+CSS 实例
+XML 实例
+Python 实例
+JavaScript 实例
+JavaScript 对象实例
+HTML DOM 实例
+jQuery 实例
+jQuery Mobile 实例
+XML DOM 实例
+DHTML 实例
+AJAX 实例
+VBScript 实例
+ASP 实例
+ADO 实例
+SVG 实例
+WAP 实例
+测验/考试
+HTML 测验
+HTML5 测验
+XHTML 测验
+CSS 测验
+XML 测验
+JavaScript 测验
+jQuery 测验
+SQL 测验
+ASP 测验
+PHP 测验
+代码验证
+验证HTML
+验证CSS
+验证XHTML
+验证XML
+验证WML
+W3School 简体中文版提供的内容仅用于培训和测试，不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。版权所有，保留一切权利。
+
+使用条款 隐私条款 广告刊例 技术支持：赢科 蒙ICP备06004630号
+</div>
+</div>
+</body>
+</html>
